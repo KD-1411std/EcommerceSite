@@ -1,0 +1,36 @@
+{% extends 'shop/basic.html' %}
+
+{% block title%}about {% endblock %}
+{% block body%}
+ {% load static %}
+ {% for product, range, nSlides in allProds %}
+{% for i in product %}
+
+<!--<h3 class="my-5" align="center">{{i.product_name}}</h3>
+<h5 align="center">{{i.category}}</h5>
+<h5 align="center">{{i.subcategory}}</h5>
+<h5 align="center">{{i.price}} Rs. per Kg</h5>
+<h5 align="center">{{i.desc}}</h5>
+<center><img src='/media/{{i.image}}' height="300px" width="500px"></center>-->
+
+<div class="container my-4">
+    <div class="row">
+    <div class="col-md-4">
+    <div class="row">
+       <img src="/media/{{i.image}}" width="300px" height="300px">
+    </div>
+        </div>
+    <div class="col-md-8" align="center">
+        <h5>{{i.product_name}}</h5>
+        <p><b> Rs. {{i.price}} per Kg.</b></p>
+        <p>{{i.desc}}</p>
+    </div>
+        </div>
+</div>
+
+
+{% endfor %}
+{% endfor %}
+
+
+{% endblock %}
